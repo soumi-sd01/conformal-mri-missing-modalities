@@ -1,0 +1,75 @@
+project:
+  name: conformal-mri-missing-modalities
+  random_seed: 42
+data:
+  root_dir: /content/brats2021_data
+  modalities:
+  - flair
+  - t1
+  - t1ce
+  - t2
+  num_classes: 4
+  expected_patient_count: 1251
+splits:
+  unit: patient
+  train: 750
+  validation: 125
+  calibration: 250
+  test: 126
+preprocessing:
+  patch_size:
+  - 64
+  - 64
+  - 64
+  spacing: native
+  resampling: false
+  normalization: per_patient_per_modality_nonzero_zscore
+  constant_intensity_nonzero_voxels: set_to_zero
+  missing_modality_fill: zero
+  brain_mask: union_of_nonzero_available_modalities
+model:
+  architecture: unet3d
+  in_channels: 4
+  out_channels: 4
+  base_filters: 16
+training:
+  batch_size: 4
+  learning_rate: 0.0001
+  weight_decay: 1.0e-05
+  max_epochs: 30
+  max_training_hours: 4.0
+  early_stopping_patience: 7
+  num_workers: 2
+  patches_per_patient: auto
+  mixed_precision: true
+  gradient_clip_norm: 1.0
+  modality_dropout_probability: 0.5
+  tumor_centered_fraction: 0.5
+  brain_centered_fraction: 0.5
+  validation_tumor_fraction: 1.0
+  save_latest_every_epoch: true
+  resume_from_latest: false
+inference:
+  sliding_window_size:
+  - 64
+  - 64
+  - 64
+  overlap: 0.25
+  patch_batch_size: 32
+  use_mixed_precision: true
+  accumulation_device: cpu
+conformal:
+  alpha: 0.1
+  score: patient_max_voxel_nonconformity
+  secondary_score: exact_patient_p95_order_statistic
+  min_group_patients: 20
+  strategies:
+    A: full_modality_calibration_applied_to_all_patterns
+    B: separate_patient_level_threshold_per_pattern
+    C: patient_maximum_across_all_patterns_global_threshold
+evaluation:
+  all_nonempty_modality_patterns: true
+  use_all_calibration_patients: true
+  use_all_test_patients: true
+  save_patient_level_results: true
+  cache_flush_every_n_patients: 10

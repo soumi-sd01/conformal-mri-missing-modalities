@@ -1,0 +1,55 @@
+% Auto-generated publication tables from empirical BraTS 2021 evaluation CSVs
+
+\begin{table*}[t]
+\centering
+\caption{Baseline Complete-Modality Model: 15-pattern conformal evaluation ($\alpha=0.10$).}
+\label{tab:baseline_conformal}
+\begin{tabular}{lrlllllll}
+\toprule
+Modality_Pattern & Missing_Count & Dice_WT_Mean & Strategy_A_Full_Cal_Coverage_WT & Strategy_B_Conditional_Coverage_WT & Strategy_C_Joint_Global_Coverage_WT & P95_Strategy_A_Coverage_WT & P95_Strategy_B_Coverage_WT & P95_Cond_Mean_Set_Size \\
+\midrule
+full\_4\_modalities & 0 & 0.445 & 0.889 & 0.889 & 1.000 & 0.873 & 0.873 & 2.556 \\
+missing\_flair & 1 & 0.195 & 0.960 & 0.929 & 1.000 & 0.111 & 0.937 & 3.670 \\
+missing\_t1 & 1 & 0.450 & 0.841 & 0.905 & 1.000 & 0.881 & 0.849 & 2.517 \\
+missing\_t1ce & 1 & 0.413 & 0.794 & 1.000 & 1.000 & 0.278 & 0.929 & 3.815 \\
+missing\_t2 & 1 & 0.438 & 0.905 & 0.897 & 1.000 & 0.857 & 0.889 & 2.674 \\
+missing\_flair\_t1 & 2 & 0.240 & 0.944 & 0.921 & 1.000 & 0.254 & 0.921 & 3.505 \\
+missing\_flair\_t1ce & 2 & 0.025 & 0.976 & 0.913 & 1.000 & 0.000 & 0.905 & 3.908 \\
+missing\_flair\_t2 & 2 & 0.073 & 0.929 & 0.960 & 1.000 & 0.016 & 0.960 & 3.927 \\
+missing\_t1\_t1ce & 2 & 0.424 & 0.833 & 1.000 & 1.000 & 0.381 & 0.897 & 3.836 \\
+missing\_t1\_t2 & 2 & 0.422 & 0.849 & 0.857 & 1.000 & 0.897 & 0.889 & 2.668 \\
+missing\_t1ce\_t2 & 2 & 0.418 & 0.849 & 0.881 & 1.000 & 0.333 & 0.944 & 3.800 \\
+only\_flair & 3 & 0.367 & 0.810 & 1.000 & 1.000 & 0.413 & 0.897 & 3.877 \\
+only\_t1 & 3 & 0.002 & 0.929 & 0.881 & 1.000 & 0.000 & 0.881 & 3.890 \\
+only\_t1ce & 3 & 0.058 & 0.905 & 0.905 & 1.000 & 0.016 & 0.889 & 3.824 \\
+only\_t2 & 3 & 0.091 & 0.984 & 0.865 & 1.000 & 0.016 & 0.905 & 3.913 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Modality-Dropout Robust Model: 15-pattern conformal evaluation ($\alpha=0.10$).}
+\label{tab:dropout_conformal}
+\begin{tabular}{lrlllllll}
+\toprule
+Modality_Pattern & Missing_Count & Dice_WT_Mean & Strategy_A_Full_Cal_Coverage_WT & Strategy_B_Conditional_Coverage_WT & Strategy_C_Joint_Global_Coverage_WT & P95_Strategy_A_Coverage_WT & P95_Strategy_B_Coverage_WT & P95_Cond_Mean_Set_Size \\
+\midrule
+full\_4\_modalities & 0 & 0.314 & 1.000 & 1.000 & 1.000 & 0.889 & 0.889 & 2.447 \\
+missing\_flair & 1 & 0.276 & 1.000 & 0.937 & 1.000 & 0.849 & 0.865 & 2.902 \\
+missing\_t1 & 1 & 0.314 & 1.000 & 1.000 & 1.000 & 0.897 & 0.905 & 2.549 \\
+missing\_t1ce & 1 & 0.305 & 1.000 & 0.905 & 1.000 & 0.730 & 0.889 & 3.624 \\
+missing\_t2 & 1 & 0.308 & 1.000 & 1.000 & 1.000 & 0.881 & 0.881 & 2.469 \\
+missing\_flair\_t1 & 2 & 0.277 & 1.000 & 0.944 & 1.000 & 0.833 & 0.873 & 2.910 \\
+missing\_flair\_t1ce & 2 & 0.259 & 1.000 & 0.857 & 1.000 & 0.587 & 0.881 & 3.730 \\
+missing\_flair\_t2 & 2 & 0.219 & 1.000 & 0.944 & 1.000 & 0.730 & 0.913 & 3.131 \\
+missing\_t1\_t1ce & 2 & 0.305 & 1.000 & 0.913 & 1.000 & 0.675 & 0.881 & 3.619 \\
+missing\_t1\_t2 & 2 & 0.306 & 1.000 & 0.937 & 1.000 & 0.889 & 0.881 & 2.527 \\
+missing\_t1ce\_t2 & 2 & 0.296 & 1.000 & 0.897 & 1.000 & 0.675 & 0.921 & 3.690 \\
+only\_flair & 3 & 0.288 & 1.000 & 0.921 & 1.000 & 0.651 & 0.873 & 3.740 \\
+only\_t1 & 3 & 0.154 & 1.000 & 0.937 & 1.000 & 0.317 & 0.913 & 3.839 \\
+only\_t1ce & 3 & 0.202 & 1.000 & 0.952 & 1.000 & 0.706 & 0.905 & 3.180 \\
+only\_t2 & 3 & 0.255 & 1.000 & 0.921 & 1.000 & 0.579 & 0.865 & 3.721 \\
+\bottomrule
+\end{tabular}
+\end{table*}

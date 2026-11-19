@@ -1,0 +1,22 @@
+# Medical data and credentials must never be committed
+data/raw/
+data/archives/
+*.nii
+*.nii.gz
+kaggle.json
+**/kaggle.json
+# Large model files/checkpoints are stored on Drive, not GitHub
+checkpoints/
+checkpoints_v3/
+*.pt
+*.pth
+*.ckpt
+# Intermediate patient caches & scratch smoke tests
+*_calibration_patient_scores.json*
+*_test_patient_metrics.json*
+results/smoke_test/
+# Python / notebook runtime
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.pyc
